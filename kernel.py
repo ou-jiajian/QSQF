@@ -1,6 +1,7 @@
 
 import os
 import torch
+import torch.nn.utils
 import logging
 import numpy as np
 from tqdm import tqdm
@@ -53,6 +54,8 @@ def train(model,
                 flag=True
                 return (loss_epoch/params.train_window,flag)
         loss.backward()
+        # 添加梯度裁剪防止梯度爆炸
+        torch.nn.utils.clip_grad_norm_(model.parameters(), max_norm=1.0)
         optimizer.step()
         loss_epoch[i] = loss.item()
     #output loss for per time

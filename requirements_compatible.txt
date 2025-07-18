@@ -1,0 +1,8 @@
+# 兼容Python 3.6+的依赖包版本
+numpy>=1.19.0,<2.0.0
+pandas>=1.0.0,<2.0.0
+scipy>=1.5.0,<2.0.0
+torch>=1.7.0,<2.0.0
+tqdm>=4.50.0
+matplotlib>=3.3.0,<4.0.0
+properscoring>=0.1 

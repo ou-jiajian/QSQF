@@ -1,0 +1,6 @@
+{
+  "data_dir": "data",
+  "dataset": "Zone1",
+  "model_dir": "example_model",
+  "model_save_dir": "example_model"
+}

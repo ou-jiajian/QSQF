@@ -29,6 +29,10 @@ def run(params,dirs,seed=None,restore_file=None):
         utils.seed(seed)
     utils.set_logger(os.path.join(dirs.model_dir, 'train.log'))
     logger = logging.getLogger('DeepAR.Train')
+    
+    # 更新目录路径
+    dirs = utils.dirs_update(dirs)
+    
     #check cuda is avaliable or not
     use_cuda=torch.cuda.is_available()
     # Set random seeds for reproducible experiments if necessary
@@ -64,7 +68,7 @@ def run(params,dirs,seed=None,restore_file=None):
     loss_fn = net.loss_fn
     # Train the model
     logger.info('Starting training for {} epoch(s)'.format(params.num_epochs))
-    train_and_evaluate(model,train_loader,vali_loader,optimizer,loss_fn,scheduler,params,dirs,restore_file)
+    train_and_evaluate(model,train_loader,vali_loader,optimizer,loss_fn,params,dirs,restore_file)
     logger.handlers.clear()
     logging.shutdown()
 

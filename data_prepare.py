@@ -82,4 +82,6 @@ def prepare_data(zone,lag=1,ids_covars=[1,2,3,4],window_size=192):
                 lag=lag,window_size=window_size,data_name=zone)
 
 if __name__ == '__main__':
-    prepare_data('Zone10',lag=3,ids_covars=[1, 2, 3, 4],window_size=96+12)
+    # 处理Zone1数据
+    prepare_data('Zone1',lag=3,ids_covars=[1, 2, 3, 4],window_size=96+12)
+    print("Zone1数据预处理完成！")
