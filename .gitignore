@@ -1,0 +1,17 @@
+# Datasets, models, and large files
+data/
+base_model/
+*.pth.tar
+*.npy
+*.csv
+
+# Python cache & virtual environment
+__pycache__/
+*.pyc
+venv/
+.env
+
+# IDE and OS specific files
+.vscode/
+.idea/
+.DS_Store
